@@ -1,7 +1,10 @@
+import 'package:flex_flex_flex/screen/user/components/sign_body.dart';
 import 'package:flutter/material.dart';
-import '../user/signUp.dart';
+import '../user/sign_screen.dart';
 import '../../routes/index.dart';
 
+
+PageRouteWithAnimation sign = PageRouteWithAnimation(const SignUpRoute());
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -12,23 +15,20 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const HomeAppbar(),
-      body: Container(
-        decoration: const BoxDecoration(color: Colors.deepPurpleAccent),
-      ),
+    return const Scaffold(
+      appBar: HomeAppbar(),
+      body: SignBody()
     );
   }
 }
 
-class HomeAppbar extends StatelessWidget implements PreferredSizeWidget {
+class HomeAppbar extends StatelessWidget implements PreferredSizeWidget  {
   @override
   Size get preferredSize => const Size.fromHeight(50);
   const HomeAppbar({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white,
       elevation: 0,
       centerTitle: false,
       title: const Text('와글리',
@@ -54,7 +54,7 @@ class HomeAppbar extends StatelessWidget implements PreferredSizeWidget {
                   children: <Widget>[
                     TextButton(
                       onPressed: () {
-                        Navigator.of(context).push(slideRitghtToLeft());
+                        Navigator.of(context).push(sign.slideRitghtToLeft());
                       },
                       child: const Text("로그인"),
                       style: TextButton.styleFrom(
