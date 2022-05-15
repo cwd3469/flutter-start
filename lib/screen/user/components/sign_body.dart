@@ -13,7 +13,7 @@ class SignBody extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           children: const <Widget>[
             Text('회원가입',style: TextStyle(
-              fontSize: 20,
+              fontSize: 40,
               fontWeight: FontWeight.w700,
               color: Colors.black,
             ),),
