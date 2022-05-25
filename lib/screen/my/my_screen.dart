@@ -13,8 +13,6 @@ class MyScreen extends StatefulWidget {
 class _MyScreenState extends State<MyScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SignBody()
-    );
+    return Container(child: Text('my page'));
   }
 }

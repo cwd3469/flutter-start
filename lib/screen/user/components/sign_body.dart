@@ -8,18 +8,17 @@ class SignBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        padding: EdgeInsets.all(12),
         decoration: const BoxDecoration(color: Colors.white),
+        width: 400,
         child: ListView(
-          padding: const EdgeInsets.all(16),
-          children: const <Widget>[
-            Text('회원가입',style: TextStyle(
-              fontSize: 40,
-              fontWeight: FontWeight.w700,
-              color: Colors.black,
-            ),),
+          children: [
+            const Text('회원가입',style: TextStyle(fontWeight: FontWeight.bold , fontSize: 20),),
+            const SizedBox(height:20),
             SignStepbar(),
+            const SizedBox(height:20),
             SignInput()
           ],
-        ));
+        ) );
   }
 }
